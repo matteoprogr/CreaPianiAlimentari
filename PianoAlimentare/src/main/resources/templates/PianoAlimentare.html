@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="css/site2.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+body{
+	 background-image:url('/img/crop.jpeg');
+	 background-size: cover;
+	 background-position: center;
+}
+</style>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<nav class="navbar" >
+        <a th:href="@{/}">Home</a>
+        
+        <a th:href="@{/tabella}">Tabella Alimenti</a>
+        
+        <a th:href="@{/Ricetta}">Crea Ricetta</a>
+        
+        <a th:href="@{/piano}">Crea Piano Alimentare</a>
+        
+        <div th:class=" ${mostraTrue} ? 'nascondi' : ''">
+        <a th:href="@{/paginaPiani}">Vedi Piani</a>
+        </div>
+        
+        <div th:class=" ${mostraTrue} ? '' : 'nascondi'">
+        <a th:href="@{/login}">Login</a>
+        </div>
+        <div th:class=" ${mostraTrue} ? 'nascondi' : ''">
+        <a th:href="@{/login/logout}">Logout</a>
+        </div>
+    </nav>
+    
+</div>
+<div class="contenitore">
+<label>Giorno della settimana</label><br>
+<select name="Giorno" id="Giorno" class="marginB text-center">
+<option>Seleziona Giorno</option>
+<option th:each="g : ${giorni}" th:text="${g}"></option>
+</select>
+
+<label>Colazione</label><br>
+<!-- Colazione -->
+<form name="Colazione">
+<div class="row  text-left">
+
+<div class="colonna" id="AlimentoColazione">
+<input type="button" value="aggiungi ingrediente" id="addAlimentoColazione" class="marginB" onclick="bottoneCliccatoSelectAlimento(this)"><br>
+<select name="Colazione" id="Colazione0" class="marginB">
+<option>Seleziona Alimento</option>
+<option th:each="al : ${allAlimenti}" th:text="${al.nome}"></option>
+</select>
+<input type="number" class="inputClassRicetta" placeholder="gr" name="gr" id="Colazionegr0">
+<br>
+</div>
+
+<div class="colonna" id="RicettaColazione">
+<input type="button" value="aggiungi ricetta" id="addRicettaColazione" class="marginB" onclick="bottoneCliccatoSelectRicetta(this)"><br>
+<select name="Colazione" id="Colazione1" class="marginB">
+<option>Seleziona Ricetta</option>
+<option th:each="rtt : ${allRicette}" th:text="${rtt.nome}"></option>
+</select><br>
+</div>
+
+<input class="resizable-button" type="button"   value="CREA TABELLA" id="addingredienteColazione" onclick="bottoneCliccatoTabella(this)" name="Colazione"><br>
+
+<div class="colonnaTab" id="tabellaColazione">
+</div>
+
+</div>
+</form>
+
+<label>Spuntino Mattina</label><br>
+<!-- Spuntino Mattina -->
+<form name="SpuntinoM">
+<div class="row  text-left">
+
+<div class="colonna" id="AlimentoSpuntinoM">
+<input type="button" value="aggiungi ingrediente" id="addAlimentoSpuntinoM" class="marginB" onclick="bottoneCliccatoSelectAlimento(this)"><br>
+<select name="SpuntinoM" id="SpuntinoM0" class="marginB">
+<option>Seleziona Alimento</option>
+<option th:each="al : ${allAlimenti}" th:text="${al.nome}"></option>
+</select>
+<input type="number" class="inputClassRicetta" placeholder="gr" name="gr" id="SpuntinoMgr0">
+<br>
+</div>
+
+<div class="colonna" id="RicettaSpuntinoM">
+<input type="button" value="aggiungi ricetta" id="addRicettaSpuntinoM" class="marginB" onclick="bottoneCliccatoSelectRicetta(this)"><br>
+<select name="SpuntinoM" id="SpuntinoM1" class="marginB">
+<option>Seleziona Ricetta</option>
+<option th:each="rtt : ${allRicette}" th:text="${rtt.nome}"></option>
+</select><br>
+</div>
+
+<input class="resizable-button" type="button"   value="CREA TABELLA" id="addingredienteSpuntinoM" onclick="bottoneCliccatoTabella(this)" name="SpuntinoM"><br>
+
+<div class="colonnaTab" id="tabellaSpuntinoM">
+</div>
+
+</div>
+</form>
+
+<label>Pranzo</label><br>
+<!-- Pranzo -->
+<form name="Pranzo">
+<div class="row  text-left">
+
+<div class="colonna" id="AlimentoPranzo">
+<input type="button" value="aggiungi ingrediente" id="addAlimentoPranzo" class="marginB" onclick="bottoneCliccatoSelectAlimento(this)"><br>
+<select name="Pranzo" id="Pranzo0" class="marginB">
+<option>Seleziona Alimento</option>
+<option th:each="al : ${allAlimenti}" th:text="${al.nome}"></option>
+</select>
+<input type="number" class="inputClassRicetta" placeholder="gr" name="gr" id="Pranzogr0">
+<br>
+</div>
+
+<div class="colonna" id="RicettaPranzo">
+<input type="button" value="aggiungi ricetta" id="addRicettaPranzo" class="marginB" onclick="bottoneCliccatoSelectRicetta(this)"><br>
+<select name="Pranzo" id="Pranzo1" class="marginB">
+<option>Seleziona Ricetta</option>
+<option th:each="rtt : ${allRicette}" th:text="${rtt.nome}"></option>
+</select><br>
+</div>
+
+<input class="resizable-button" type="button"   value="CREA TABELLA" id="addingredientePranzo" onclick="bottoneCliccatoTabella(this)" name="Pranzo"><br>
+
+<div class="colonnaTab" id="tabellaPranzo">
+</div>
+
+</div>
+</form>
+
+<label>Spuntino Pomeriggio</label><br>
+<!-- Spuntino Pomeriggio -->
+<form name="SpuntinoP">
+<div class="row  text-left">
+
+<div class="colonna" id="AlimentoSpuntinoP">
+<input type="button" value="aggiungi ingrediente" id="addAlimentoSpuntinoP" class="marginB" onclick="bottoneCliccatoSelectAlimento(this)"><br>
+<select name="SpuntinoP" id="SpuntinoP0" class="marginB">
+<option>Seleziona Alimento</option>
+<option th:each="al : ${allAlimenti}" th:text="${al.nome}"></option>
+</select>
+<input type="number" class="inputClassRicetta" placeholder="gr" name="gr" id="SpuntinoPgr0">
+<br>
+</div>
+
+<div class="colonna" id="RicettaSpuntinoP">
+<input type="button" value="aggiungi ricetta" id="addRicettaSpuntinoP" class="marginB" onclick="bottoneCliccatoSelectRicetta(this)"><br>
+<select name="SpuntinoP" id="SpuntinoP1" class="marginB">
+<option>Seleziona Ricetta</option>
+<option th:each="rtt : ${allRicette}" th:text="${rtt.nome}"></option>
+</select><br>
+</div>
+
+<input class="resizable-button" type="button"   value="CREA TABELLA" id="addingredienteSpuntinoP" onclick="bottoneCliccatoTabella(this)" name="SpuntinoP"><br>
+
+<div class="colonnaTab" id="tabellaSpuntinoP">
+</div>
+
+</div>
+</form>
+
+<label>Cena</label><br>
+<!-- Cena -->
+<form name="Cena">
+<div class="row  text-left">
+
+<div class="colonna" id="AlimentoCena">
+<input type="button" value="aggiungi ingrediente" id="addAlimentoCena" class="marginB" onclick="bottoneCliccatoSelectAlimento(this)"><br>
+<select name="Cena" id="Cena0" class="marginB">
+<option>Seleziona Alimento</option>
+<option th:each="al : ${allAlimenti}" th:text="${al.nome}"></option>
+</select>
+<input type="number" class="inputClassRicetta" placeholder="gr" name="gr" id="Cenagr0">
+<br>
+</div>
+
+<div class="colonna" id="RicettaCena">
+<input type="button" value="aggiungi ricetta" id="addRicettaCena" class="marginB" onclick="bottoneCliccatoSelectRicetta(this)"><br>
+<select name="Cena" id="Cena1" class="marginB">
+<option>Seleziona Ricetta</option>
+<option th:each="rtt : ${allRicette}" th:text="${rtt.nome}"></option>
+</select><br>
+</div>
+
+<input class="resizable-button" type="button"   value="CREA TABELLA" id="addingredienteCena" onclick="bottoneCliccatoTabella(this)" name="Cena"><br>
+
+<div class="colonnaTab" id="tabellaCena">
+</div>
+
+</div>
+</form>
+
+
+<input type="button" class="marginB" onclick="ottieniValoriDaTabelle()" value="Calcola Totale Valori Nutrizionali">
+<input type="button" onclick="savePiano()" value="Salva" class="marginB" id="save" disabled>
+<label th:text="${fabbisogno}"></label>
+<div class="colonnaTabTot" id="tabellaTotale">
+</div>
+
+</div>
+<script th:inline="javascript" src="/js/pianoAlimentare.js"></script>
+
+
+</body>
+</html>

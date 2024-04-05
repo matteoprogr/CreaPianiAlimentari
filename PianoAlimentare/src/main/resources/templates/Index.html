@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="css/site2.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+body{
+	 background-image:url('img/gettyimages-1457889029-612x612.jpg');
+	 background-size: cover;
+	 background-position: center;
+}
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<nav class="navbar" >
+        <a th:href="@{/}">Home</a>
+        
+        <a th:href="@{/tabella}">Tabella Alimenti</a>
+        
+        <a th:href="@{/Ricetta}">Crea Ricetta</a>
+        
+        <a th:href="@{/piano}">Crea Piano Alimentare</a>
+        
+        <div th:class=" ${mostraTrue} ? 'nascondi' : ''">
+        <a th:href="@{/paginaPiani}">Vedi Piani</a>
+        </div>
+        
+        <div th:class=" ${mostraTrue} ? '' : 'nascondi'">
+        <a th:href="@{/login}">Login</a>
+        </div>
+        <div th:class=" ${mostraTrue} ? 'nascondi' : ''">
+        <a th:href="@{/login/logout}">Logout</a>
+        </div>
+    </nav>
+</div>
+<div class="contenitorePiani">
+<div th:class=" ${mostraTrue} ? 'nascondi' : ''">
+<div class="text-center">
+<label th:text=${user}></label>
+</div>
+ </div>
+ 
+<div th:class=" ${mostraTrue} ? '' : 'nascondi'">
+<div class="text-center">
+<a href="paginaRegistrazione">Registrati</a>
+</div>
+ </div>
+ </div>
+ 
+
+</body>
+</html>

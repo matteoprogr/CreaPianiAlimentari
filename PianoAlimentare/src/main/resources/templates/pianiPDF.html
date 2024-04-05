@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="css/site2.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+body{
+	 background-image:url('img/gettyimages-1278940460-612x612.jpg');
+	 background-size: cover;
+	 background-position: center;
+}
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body  background="gettyimages-1278940460-612x612.jpg">
+<div>
+<nav class="navbar" >
+        <a th:href="@{/}">Home</a>
+        
+        <a th:href="@{/tabella}">Tabella Alimenti</a>
+        
+        <a th:href="@{/Ricetta}">Crea Ricetta</a>
+        
+        <a th:href="@{/piano}">Crea Piano Alimentare</a>
+        <div th:class=" ${mostraTrue} ? '' : 'nascondi'">
+        <a th:href="@{/login}">Login</a>
+        </div>
+        <div th:class=" ${mostraTrue} ? 'nascondi' : ''">
+        <a th:href="@{/login/logout}">Logout</a>
+        </div>
+    </nav>
+</div>
+
+<a class="sfondo" href="/paginaPiani/download">Scarica pdf</a>
+<div class="row text-center">
+<div th:class=" ${Lunedi} ? 'nascondi' : ''">
+<div class="colonnaPiani contenitorePiani">
+<div th:each="pasto : ${pastiLunedi}">
+<label th:text="${pasto.giorno}"></label>
+<p class="label-piani">Colazione</p>
+<p th:text="${pasto.colazione}"></p>
+<p class="label-piani">Spuntino Mattina</p>
+<p th:text="${pasto.spuntinoMattina}"></p>
+<p class="label-piani">Pranzo</p>
+<p th:text="${pasto.pranzo}"></p>
+<p class="label-piani">Spuntino Pomeriggio</p>
+<p th:text="${pasto.spuntinoPomeriggio}"></p>
+<p class="label-piani">Cena</p>
+<p th:text="${pasto.cena}"></p>
+<p class="label-piani">Totale valori nutrizionali</p>
+<p th:text="${pasto.totale}"></p>
+</div>
+</div>
+</div>
+<div th:class=" ${Martedi} ? 'nascondi' : ''">
+<div class="colonnaPiani contenitorePiani">
+<div th:each="pasto : ${pastiMartedi}">
+<label th:text="${pasto.giorno}"></label>
+<p class="label-piani">Colazione</p>
+<p th:text="${pasto.colazione}"></p>
+<p class="label-piani">Spuntino Mattina</p>
+<p th:text="${pasto.spuntinoMattina}"></p>
+<p class="label-piani">Pranzo</p>
+<p th:text="${pasto.pranzo}"></p>
+<p class="label-piani">Spuntino Pomeriggio</p>
+<p th:text="${pasto.spuntinoPomeriggio}"></p>
+<p class="label-piani">Cena</p>
+<p th:text="${pasto.cena}"></p>
+<p class="label-piani">Totale valori nutrizionali</p>
+<p th:text="${pasto.totale}"></p>
+</div>
+</div>
+</div>
+<div th:class=" ${Mercoledi} ? 'nascondi' : ''">
+<div class="colonnaPiani contenitorePiani">
+<div th:each="pasto : ${pastiMercoledi}">
+<label th:text="${pasto.giorno}"></label>
+<p class="label-piani">Colazione</p>
+<p th:text="${pasto.colazione}"></p>
+<p class="label-piani">Spuntino Mattina</p>
+<p th:text="${pasto.spuntinoMattina}"></p>
+<p class="label-piani">Pranzo</p>
+<p th:text="${pasto.pranzo}"></p>
+<p class="label-piani">Spuntino Pomeriggio</p>
+<p th:text="${pasto.spuntinoPomeriggio}"></p>
+<p class="label-piani">Cena</p>
+<p th:text="${pasto.cena}"></p>
+<p class="label-piani">Totale valori nutrizionali</p>
+<p th:text="${pasto.totale}"></p>
+</div>
+</div>
+</div>
+<div th:class=" ${Giovedi} ? 'nascondi' : ''">
+<div class="colonnaPiani contenitorePiani">
+<div th:each="pasto : ${pastiGiovedi}">
+<label th:text="${pasto.giorno}"></label>
+<p class="label-piani">Colazione</p>
+<p th:text="${pasto.colazione}"></p>
+<p class="label-piani">Spuntino Mattina</p>
+<p th:text="${pasto.spuntinoMattina}"></p>
+<p class="label-piani">Pranzo</p>
+<p th:text="${pasto.pranzo}"></p>
+<p class="label-piani">Spuntino Pomeriggio</p>
+<p th:text="${pasto.spuntinoPomeriggio}"></p>
+<p class="label-piani">Cena</p>
+<p th:text="${pasto.cena}"></p>
+<p class="label-piani">Totale valori nutrizionali</p>
+<p th:text="${pasto.totale}"></p>
+</div>
+</div>
+</div>
+</div>
+<div class="row text-center">
+<div th:class=" ${Venerdi} ? 'nascondi' : ''">
+<div class="colonnaPiani contenitorePiani">
+<div th:each="pasto : ${pastiVenerdi}">
+<label th:text="${pasto.giorno}"></label>
+<p class="label-piani">Colazione</p>
+<p th:text="${pasto.colazione}"></p>
+<p class="label-piani">Spuntino Mattina</p>
+<p th:text="${pasto.spuntinoMattina}"></p>
+<p class="label-piani">Pranzo</p>
+<p th:text="${pasto.pranzo}"></p>
+<p class="label-piani">Spuntino Pomeriggio</p>
+<p th:text="${pasto.spuntinoPomeriggio}"></p>
+<p class="label-piani">Cena</p>
+<p th:text="${pasto.cena}"></p>
+<p class="label-piani">Totale valori nutrizionali</p>
+<p th:text="${pasto.totale}"></p>
+</div>
+</div>
+</div>
+<div th:class=" ${Sabato} ? 'nascondi' : ''">
+<div class="colonnaPiani contenitorePiani">
+<div th:each="pasto : ${pastiSabato}">
+<label th:text="${pasto.giorno}"></label>
+<p class="label-piani">Colazione</p>
+<p th:text="${pasto.colazione}"></p>
+<p class="label-piani">Spuntino Mattina</p>
+<p th:text="${pasto.spuntinoMattina}"></p>
+<p class="label-piani">Pranzo</p>
+<p th:text="${pasto.pranzo}"></p>
+<p class="label-piani">Spuntino Pomeriggio</p>
+<p th:text="${pasto.spuntinoPomeriggio}"></p>
+<p class="label-piani">Cena</p>
+<p th:text="${pasto.cena}"></p>
+<p class="label-piani">Totale valori nutrizionali</p>
+<p th:text="${pasto.totale}"></p>
+</div>
+</div>
+</div>
+<div th:class=" ${Domenica} ? 'nascondi' : ''">
+<div class="colonnaPiani contenitorePiani">
+<div th:each="pasto : ${pastiDomenica}">
+<label th:text="${pasto.giorno}"></label>
+<p class="label-piani">Colazione</p>
+<p th:text="${pasto.colazione}"></p>
+<p class="label-piani">Spuntino Mattina</p>
+<p th:text="${pasto.spuntinoMattina}"></p>
+<p class="label-piani">Pranzo</p>
+<p th:text="${pasto.pranzo}"></p>
+<p class="label-piani">Spuntino Pomeriggio</p>
+<p th:text="${pasto.spuntinoPomeriggio}"></p>
+<p class="label-piani">Cena</p>
+<p th:text="${pasto.cena}"></p>
+<p class="label-piani">Totale valori nutrizionali</p>
+<p th:text="${pasto.totale}"></p>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<script src="/js/download.js"></script>
+</body> 
+</html>

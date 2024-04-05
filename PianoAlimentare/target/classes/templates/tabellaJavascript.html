@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="css/site2.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<nav class="navbar" >
+        <a th:href="@{/}">Home</a>
+        
+        <a th:href="@{/tabella}">Tabella Alimenti</a>
+        
+        <a th:href="@{/Ricetta}">Crea Ricetta</a>
+        
+        <a th:href="@{/piano}">Crea Piano Alimentare</a>
+        
+        <div th:class=" ${mostraTrue} ? 'nascondi' : ''">
+        <a th:href="@{/paginaPiani}">Vedi Piani</a>
+        </div>
+        
+        <div th:class=" ${mostraTrue} ? '' : 'nascondi'">
+        <a th:href="@{/login}">Login</a>
+        </div>
+        <div th:class=" ${mostraTrue} ? 'nascondi' : ''">
+        <a th:href="@{/login/logout}">Logout</a>
+        </div>
+    </nav>
+    
+    
+    <div class="rowTab">
+    <div class="colonnaFiltri">
+    <select id="cate" onclick="loadCategorie(this)">
+    <option>Seleziona</option>
+    <option th:each="cat : ${categorie}" th:text=${cat}> </option>
+    </select>
+    </div>
+    <div class="colonnaTabAli" id="divtabella">
+    
+    </div>
+    </div>
+    
+    
+</div>
+<script src="/js/filtro.js"></script>
+</body>
+</html>

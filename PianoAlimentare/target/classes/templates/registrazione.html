@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<link rel="stylesheet" href="css/site2.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+body{
+	 background-image:url('img/gettyimages-1278940460-612x612.jpg');
+	 background-size: cover;
+	 background-position: center;
+}
+</style>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<div>
+<nav class="navbar" >
+        <a th:href="@{/}">Home</a>
+        
+        <a th:href="@{/tabella}">Tabella Alimenti</a>
+        
+        <a th:href="@{/Ricetta}">Crea Ricetta</a>
+        
+        <a th:href="@{/piano}">Crea Piano Alimentare</a>
+        
+       <div th:class=" ${mostraTrue} ? 'nascondi' : ''">
+        <a th:href="@{/paginaPiani}">Vedi Piani</a>
+        </div>
+        
+        <div th:class=" ${mostraTrue} ? '' : 'nascondi'">
+        <a th:href="@{/login}">Login</a>
+        </div>
+    </nav>
+</div >
+
+    <div class="contenitoreReg text-center">
+    <form action="/registrazione" method="post">
+    <input class="inputClassReg" type="text" placeholder="Username" name="Nome" id="Nome"><br>
+        <input class="inputClassReg" type="password" placeholder="Password" name="Password" id="Pass"><br>
+        <input class="inputClassRegNum" type="number" placeholder="Peso" name="Peso" id="Peso">
+        <input class="inputClassRegNumAlt" type="number" placeholder="Altezza cm" name="Altezza" id="alt">
+        <input class="inputClassRegNum" type="number" placeholder="Età" name="Eta" id="Eta"><br>
+        <select name="Obiettivo" class="inputClassReg text-center" id="Obiettivo">
+        <option>Obiettivo</option>
+            <option th:each="ob : ${obiettivi}" th:text="${ob}" ></option>
+        </select>
+        <br>
+        <select class="inputClassReg text-center" id="stile">
+        <option>Stile di vita</option>
+        <option>Sedentario</option>
+        <option>Moderatamente attivo</option>
+        <option>Attivo</option>
+        </select><br>
+        <select class="inputClassReg text-center" id="Sesso">
+        <option>Sesso Biologico</option>
+        <option>Uomo</option>
+        <option>Donna</option>
+        </select><br>
+        <input class="marginB" type="button" value="Calcola Fabbisogno Calorico"  onclick="calcola()" ><br>
+        <input type="hidden" name="Fabbisogno" id="Hidden">
+        <label id="Fabbisogno" ></label><br>
+        <input type="submit" value="Registrati"  disabled  id="reg">
+    </form>
+        <script th:inline="javascript" src="/js/calcoloFabbisogno.js"></script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+IdCibo;Alimento;Calorie;Carboidrati;Grassi;Proteine;Categoria
+1;Pasta;360;72;1.4;12;cereale
+2;Riso;340;80;0.5;7;cereale
+3;Pane;270;49;3.2;9;cereale
+4;pollo;110;0;3.6;20;carne
+5;carne bovina cruda;215;0;9.4;22;carne
+6;carne suino cruda;300;0;9.3;23;carne
+7;salmone;185;0;15;18.4;pesce
+8;aragosta;85;1.3;2;20;pesce
+9;gamberi;85;1;1;20;pesce
+10;merluzzo;82;0;0.67;18;pesce
+11;frutti di mare;80;0;3.5;15;pesce
+12;uova;182;0;9;12;altro
+13;yogurt greco;115;9;0;6;lattinici
+14;parmigiano;400;1;30;32;lattinici
+15;provola;370;2.8;29;25;lattinici
+16;pecorino;400;1;33;26;lattinici
+17;biscotti;350;68;21;7;altro
+18;fette biscottate;387;72;6;11;cereale
+19;marmellata;227;62;0.5;1;altro
+20;corn flakes;380;75;1.5;6;cereale
+21;tonno;192;0;10;25;pesce
+22;olio;899;0;99.9;0;altro
+23;crema pistacchio;306;30;38;8;dolci
+24;guanciale;645;0;72;6;carne
+25;latte;64;5;3.6;3.3;latticini
+26;maionese;655;2;70;4;altro
+27;ceci cotti;134;19;2.4;9;frutta/verdura
+28;fagioli cotti;102;17;0.7;8;frutta/verdura
+29;banana;90;15;0;1;frutta/verdura
+30;mandarino/arancia;72;17;0;1;frutta/verdura
+31;pomodori;20;4;0;1;frutta/verdura
+32;lattuga;15;2.2;0.4;1;frutta/verdura
+33;broccoli;34;1.7;0.4;3;frutta/verdura
+34;cicoria;12;1.7;0;1;frutta/verdura
+35;noci;600;10;57;10;frutta/verdura
+36;salsa pomodoro;28;3.6;0;1;altro
+37;piadina;350;47;11;7;cereale
+38;zucchine;15;3;0;1;frutta/verdura
+39;melanzane;80;10;3.3;1.7;frutta/verdura
+40;mozzarella;250;0.7;19;18;latticini
+41;bufala;290;0.5;24;17;latticini
+42;cotolette  di pollo;240;20;10;11;carne
+43;mandorle;600;19;50;22;frutta/verdura
+44;pizza generica;268;28;4.3;15;cereale
+45;birra;43;3.5;0;0;altro
+46;pangrattato;369;77;2;10;cereale
+47;prosciutto crudo;150;0;8;25;carne
+48;dolce generico;450;65;8;5;dolci
+49;hamburger;242;24;10;13;carne
+50;patatine fritte;274;29;7;5;altro
+51;olive;350;6;11;1;frutta/verdura
+52;prosciutto cotto;215;1;6;18;carne
+53;pesto;570;4.2;58;5.7;altro
+54;nutella;539;57;30;6.3;dolci
+;;;;;;
+;;;;;;
